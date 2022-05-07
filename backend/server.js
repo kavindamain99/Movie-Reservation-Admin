@@ -14,6 +14,11 @@ app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
 
+//routers
+const adminRouter = require("./routes/adminUser");
+
+app.use("/api/auth/", adminRouter);
+
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
